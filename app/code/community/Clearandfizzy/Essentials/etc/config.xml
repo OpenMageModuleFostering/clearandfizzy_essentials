@@ -17,7 +17,6 @@
  * @description This file configures the Clearandfizzy tab and any default menus in the magento admin
  */
 -->
-
 <config>     
  
 	<modules>
@@ -39,15 +38,13 @@
 				<class>Clearandfizzy_Essentials_Helper</class>
 			</clearandfizzy_essentials>
 		</helpers>
-
-
+		
 		<models>
 			<clearandfizzy_essentials>
 				<class>Clearandfizzy_Essentials_Model</class>
 			</clearandfizzy_essentials>
 		</models>
 	
-  
 	</global>
 
     <adminhtml>
@@ -64,13 +61,14 @@
     
         <layout>
             <updates>
-                <clearandfizzy_essentials module="Clearandfizzy_Essentials">
-                    <file>clearandfizzy/essentials/essentials.xml</file>
-                </clearandfizzy_essentials>
+   
+				<clearandfizzy_essentials_layoutstack module="Clearandfizzy_Essentials">
+					<file>clearandfizzy/essentials/stacklayout.xml</file>	
+				</clearandfizzy_essentials_layoutstack>  
+
             </updates>
         </layout>
     </adminhtml>
-
 
     <frontend>
         <layout>

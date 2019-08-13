@@ -49,7 +49,34 @@
 					<show_in_default>1</show_in_default>
 					<show_in_website>1</show_in_website>
 					<show_in_store>1</show_in_store>
-					<comment><![CDATA[  ]]></comment>				
+					<comment><![CDATA[
+						<ol>
+						<li><h3>About</h3></li>
+						<li>A time saving collection of small extensions, features and developer tools for your Magento install.</li>		
+						<li>&nbsp;</li>
+						</ol>
+						<ol>
+						<li><h3>Key Features</h3></li>
+						<li>Add a Edit Product link to the Category Manager Screen</li>
+						<li>Developer Tools will output the current Magento Layout stack (see which Handles are actually being executed) - configure it's output.</li>
+						<li>Configure the Links in the TopLinks block.</li>
+						<li>Show / Hide the Newsletter block.</li>
+						<li>Show / Hide quick search block.</li>
+						<li>Show / Hide the Magento Poll.</li>
+					 	<li>&nbsp;</li>
+					 </ol> 
+
+					 <ol>
+					 	<li><h3>Compatibility</h3>
+					 	<li>This extension has been tested against the default Magento Install and the default theme.</li>
+					 	<li>&nbsp;</li>
+					 </ol>					 	
+					 
+					 <ol>
+					 	<li><h3>Support</h3>
+					 	<li>Magento Support Page Q&A's / FAQ - <a target="_blank" style="color:blue;" href="http://www.magentocommerce.com/magento-connect/clearandfizzy-essentials.html">http://www.magentocommerce.com/magento-connect/clearandfizzy-essentials.html</a></li>
+					 </ol>					 	
+					 ]]></comment>				
 					<expanded>1</expanded>
 				</essentials_about>
 
@@ -61,6 +88,8 @@
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>   
 					<expanded>1</expanded>
+					<comment><![CDATA[<p>Extends the default Magento Category manager to have a quick link to products that are assigned to a specific category.</p>]]></comment>
+					
  
 					<fields>
 				        <isenabled>
@@ -76,86 +105,79 @@
 				    </fields>    
  
                 </categoryproducttab>
-                
-                <newsletter translate="label">
-                    <label>Newsletter Signup Form</label>
+
+                <developertools translate="label">
+                    <label>Developer Tools</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>20</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>   
 					<expanded>1</expanded>
+					<comment><![CDATA[<p>Outputs the layout handle array, on both the frontend and backend - a developer can use this to help develop layout based extensions.</p>]]></comment>
  
 					<fields>
-				        <footer_ishidden>
-					        <label>Hide (Footer)</label>
+				        <layoutstack_enabled>
+					        <label>Layout Stack enabled</label>
 							<frontend_type>select</frontend_type>
 							<source_model>adminhtml/system_config_source_yesno</source_model>                 
-				            <comment>Hide the Newsletter block from the footer</comment>
+				            <comment>Outputs Magentos layout stack for the current page </comment>
 				            <sort_order>1</sort_order>
 				            <show_in_default>1</show_in_default>
 				            <show_in_website>1</show_in_website>
 				            <show_in_store>1</show_in_store>                    
-				        </footer_ishidden>
+				        </layoutstack_enabled>
 
-				        <left_ishidden>
-					        <label>Hide (Left Column)</label>
+				        <layoutstack_output_comment>
+				        	<depends><layoutstack_enabled>1</layoutstack_enabled></depends>
+					        <label>Output as hidden HTML comment</label>
 							<frontend_type>select</frontend_type>
 							<source_model>adminhtml/system_config_source_yesno</source_model>                 
-				            <comment>Hide the Newsletter block from the left column</comment>
-				            <sort_order>1</sort_order>
+				            <comment>Outputs layout stack as a HTML comment inside head tags</comment>
+				            <sort_order>20</sort_order>
 				            <show_in_default>1</show_in_default>
 				            <show_in_website>1</show_in_website>
 				            <show_in_store>1</show_in_store>                    
-				        </left_ishidden>
+				        </layoutstack_output_comment>
 
-				        <right_ishidden>
-					        <label>Hide (Right Column)</label>
+				        <layoutstack_output_html>
+				        	<depends><layoutstack_enabled>1</layoutstack_enabled></depends>
+					        <label>Output at bottom of page </label>
 							<frontend_type>select</frontend_type>
 							<source_model>adminhtml/system_config_source_yesno</source_model>                 
-				            <comment>Hide the Newsletter block from the right column</comment>
-				            <sort_order>1</sort_order>
+				            <comment>The stack will be  directly onto the bottom of the page</comment>
+				            <sort_order>30</sort_order>
 				            <show_in_default>1</show_in_default>
 				            <show_in_website>1</show_in_website>
 				            <show_in_store>1</show_in_store>                    
-				        </right_ishidden>
+				        </layoutstack_output_html>
+
+				        <layoutstack_output_float>
+				        	<depends><layoutstack_enabled>1</layoutstack_enabled></depends>
+					        <label>Output as floating div</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>                 
+				            <comment>A small "+" character will be displayed at the bottom of the page, clicking it will reveal output.</comment>
+				            <sort_order>40</sort_order>
+				            <show_in_default>1</show_in_default>
+				            <show_in_website>1</show_in_website>
+				            <show_in_store>1</show_in_store>                    
+				        </layoutstack_output_float>
 
 				    </fields>    
  
-                </newsletter>                
+                </developertools>                 
 
-                <quicksearch translate="label">
-                    <label>Quick Search</label>
+                <toplinks translate="label">
+                    <label>Top links</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>30</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>   
 					<expanded>1</expanded>
- 
-					<fields>
-				        <ishidden>
-					        <label>Hide Quicksearch</label>
-							<frontend_type>select</frontend_type>
-							<source_model>adminhtml/system_config_source_yesno</source_model>                 
-				            <comment>Hides the quicksearch box in the header</comment>
-				            <sort_order>1</sort_order>
-				            <show_in_default>1</show_in_default>
-				            <show_in_website>1</show_in_website>
-				            <show_in_store>1</show_in_store>                    
-				        </ishidden>
-				    </fields>    
- 
-                </quicksearch>
-
-                <toplinks translate="label">
-                    <label>Top links</label>
-                    <frontend_type>text</frontend_type>
-                    <sort_order>40</sort_order>
-                    <show_in_default>1</show_in_default>
-                    <show_in_website>1</show_in_website>
-                    <show_in_store>1</show_in_store>   
-					<expanded>1</expanded>
+					<comment><![CDATA[<p>Allows you to configure which links appear in the toplinks section inside the header of the defauly Magento layout.</p>]]></comment>
+					
  
 					<fields>
 				        <toplinks_ishidden>
@@ -217,18 +239,92 @@
 				            <show_in_store>1</show_in_store>                    
 				        </wishlists_ishidden>
 
-				    </fields>    
- 
+				    </fields>     
                 </toplinks>
                 
-                <poll translate="label">
-                    <label>Poll</label>
+                <newsletter translate="label">
+                    <label>Newsletter Signup Form</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>40</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>   
+					<expanded>1</expanded>
+					<comment><![CDATA[<p>Removes the Newsletter form from the default Magento layout.</p>]]></comment>
+					
+					<fields>
+				        <footer_ishidden>
+					        <label>Hide (Footer)</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>                 
+				            <comment>Hide the Newsletter block from the footer</comment>
+				            <sort_order>1</sort_order>
+				            <show_in_default>1</show_in_default>
+				            <show_in_website>1</show_in_website>
+				            <show_in_store>1</show_in_store>                    
+				        </footer_ishidden>
+
+				        <left_ishidden>
+					        <label>Hide (Left Column)</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>                 
+				            <comment>Hide the Newsletter block from the left column</comment>
+				            <sort_order>1</sort_order>
+				            <show_in_default>1</show_in_default>
+				            <show_in_website>1</show_in_website>
+				            <show_in_store>1</show_in_store>                    
+				        </left_ishidden>
+
+				        <right_ishidden>
+					        <label>Hide (Right Column)</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>                 
+				            <comment>Hide the Newsletter block from the right column</comment>
+				            <sort_order>1</sort_order>
+				            <show_in_default>1</show_in_default>
+				            <show_in_website>1</show_in_website>
+				            <show_in_store>1</show_in_store>                    
+				        </right_ishidden>
+
+				    </fields>    
+ 
+                </newsletter>                
+
+                <quicksearch translate="label">
+                    <label>Quick Search</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>50</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>   
 					<expanded>1</expanded>
+					<comment><![CDATA[<p>Hides the Quicksearch from the header of the default Magento layout.</p>]]></comment>
+					
+					<fields>
+				        <ishidden>
+					        <label>Hide Quicksearch</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>                 
+				            <comment>Hides the quicksearch box in the header</comment>
+				            <sort_order>1</sort_order>
+				            <show_in_default>1</show_in_default>
+				            <show_in_website>1</show_in_website>
+				            <show_in_store>1</show_in_store>                    
+				        </ishidden>
+				    </fields>    
+ 
+                </quicksearch>
+
+                
+                <poll translate="label">
+                    <label>Poll</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>60</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>   
+					<expanded>1</expanded>
+					<comment><![CDATA[<p>Hides the poll on the default Magento layout.</p>]]></comment>
  
 					<fields>
 				        <ishidden>
@@ -248,11 +344,12 @@
                 <callouts translate="label">
                     <label>Callouts</label>
                     <frontend_type>text</frontend_type>
-                    <sort_order>60</sort_order>
+                    <sort_order>70</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>   
 					<expanded>1</expanded>
+					<comment><![CDATA[<p>Hides the adverts on the default Magento layout.</p>]]></comment>
  
 					<fields>
 				        <right_ishidden>
@@ -269,66 +366,6 @@
  
                 </callouts>                 
 
-                <developertools translate="label">
-                    <label>Developer Tools</label>
-                    <frontend_type>text</frontend_type>
-                    <sort_order>70</sort_order>
-                    <show_in_default>1</show_in_default>
-                    <show_in_website>1</show_in_website>
-                    <show_in_store>1</show_in_store>   
-					<expanded>1</expanded>
- 
-					<fields>
-				        <layoutstack_enabled>
-					        <label>Layout Stack enabled</label>
-							<frontend_type>select</frontend_type>
-							<source_model>adminhtml/system_config_source_yesno</source_model>                 
-				            <comment>Outputs Magentos layout stack for the current page </comment>
-				            <sort_order>1</sort_order>
-				            <show_in_default>1</show_in_default>
-				            <show_in_website>1</show_in_website>
-				            <show_in_store>1</show_in_store>                    
-				        </layoutstack_enabled>
-
-				        <layoutstack_output_comment>
-				        	<depends><layoutstack_enabled>1</layoutstack_enabled></depends>
-					        <label>Output as hidden HTML comment</label>
-							<frontend_type>select</frontend_type>
-							<source_model>adminhtml/system_config_source_yesno</source_model>                 
-				            <comment>Outputs layout stack as a HTML comment inside head tags</comment>
-				            <sort_order>20</sort_order>
-				            <show_in_default>1</show_in_default>
-				            <show_in_website>1</show_in_website>
-				            <show_in_store>1</show_in_store>                    
-				        </layoutstack_output_comment>
-
-				        <layoutstack_output_html>
-				        	<depends><layoutstack_enabled>1</layoutstack_enabled></depends>
-					        <label>Output at bottom of page </label>
-							<frontend_type>select</frontend_type>
-							<source_model>adminhtml/system_config_source_yesno</source_model>                 
-				            <comment>The stack will be  directly onto the bottom of the page</comment>
-				            <sort_order>30</sort_order>
-				            <show_in_default>1</show_in_default>
-				            <show_in_website>1</show_in_website>
-				            <show_in_store>1</show_in_store>                    
-				        </layoutstack_output_html>
-
-				        <layoutstack_output_float>
-				        	<depends><layoutstack_enabled>1</layoutstack_enabled></depends>
-					        <label>Output as floating div</label>
-							<frontend_type>select</frontend_type>
-							<source_model>adminhtml/system_config_source_yesno</source_model>                 
-				            <comment>A small "+" character will be displayed at the bottom of the page, clicking it will reveal output.</comment>
-				            <sort_order>40</sort_order>
-				            <show_in_default>1</show_in_default>
-				            <show_in_website>1</show_in_website>
-				            <show_in_store>1</show_in_store>                    
-				        </layoutstack_output_float>
-
-				    </fields>    
- 
-                </developertools>                 
             
             </groups>               	       
 			   
