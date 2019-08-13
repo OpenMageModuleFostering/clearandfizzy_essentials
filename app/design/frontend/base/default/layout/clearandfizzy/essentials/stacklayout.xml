@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+
+-->
+<layout version="0.1.0">
+
+    <default>
+		<block type="core/template" name="layoutstack.comment" template="clearandfizzy/essentials/layoutstack/comment.phtml" />
+		<block type="core/template" name="layoutstack.html" template="clearandfizzy/essentials/layoutstack/html.phtml" />
+		<block type="core/template" name="layoutstack.float" template="clearandfizzy/essentials/layoutstack/html/float.phtml" />
+ 
+        <reference name="head">
+        	<action method="append" ifconfig="clearandfizzy_essentials/developertools/layoutstack_output_comment">
+        		<block>layoutstack.comment</block>
+        	</action>
+        </reference>      	
+	
+		<reference name="before_body_end"> 
+			<action method="append" ifconfig="clearandfizzy_essentials/developertools/layoutstack_output_html">
+				<block>layoutstack.html</block>
+			</action>
+		</reference>
+
+		<reference name="layoutstack.float"> 
+			<action method="append" ifconfig="clearandfizzy_essentials/developertools/layoutstack_output_float">
+				<block>layoutstack.html</block>
+			</action>
+		</reference>
+
+		<reference name="before_body_end"> 
+			<action method="append" ifconfig="clearandfizzy_essentials/developertools/layoutstack_output_float">
+				<block>layoutstack.float</block>
+			</action>
+		</reference>
+
+	</default>
+	
+</layout>

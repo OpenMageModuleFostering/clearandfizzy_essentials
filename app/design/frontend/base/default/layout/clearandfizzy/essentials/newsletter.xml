@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+
+-->
+<layout version="0.1.0">
+
+    <default>
+        
+        <reference name="footer">
+        	<action method="unsetChild" ifconfig="clearandfizzy_essentials/newsletter/footer_ishidden">
+        		<name>footer.newsletter</name>
+        	</action>
+        </reference>
+        
+        <reference name="left">
+        	<action method="unsetChild" ifconfig="clearandfizzy_essentials/newsletter/left_ishidden">
+        		<name>left.newsletter</name>
+        	</action>
+        </reference>
+
+        <reference name="right">
+        	<action method="unsetChild" ifconfig="clearandfizzy_essentials/newsletter/right_ishidden">
+        		<name>right.newsletter</name>
+        	</action>
+        </reference>
+
+    
+ 	</default>
+
+</layout>

@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Clearandfizzy
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ *
+ * @category    Clearandfizzy
+ * @package     Clearandfizzy_Essentials
+ * @copyright   Copyright (c) 2012 Clearandfizzy ltd. (http://www.clearandfizzy.com/)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @description This file configures the Clearandfizzy tab and any default menus in the magento admin
+ */
+-->
+
+<config>     
+ 
+	<modules>
+		<Clearandfizzy_Essentials>
+			<version>1.0.0</version>
+		</Clearandfizzy_Essentials>
+	</modules>
+	
+	<global>
+
+		<blocks>
+			<clearandfizzy_essentials>
+				<class>Clearandfizzy_Essentials_Block</class>
+			</clearandfizzy_essentials>
+		</blocks>
+		
+		<helpers>
+			<clearandfizzy_essentials>
+				<class>Clearandfizzy_Essentials_Helper</class>
+			</clearandfizzy_essentials>
+		</helpers>
+
+
+		<models>
+			<clearandfizzy_essentials>
+				<class>Clearandfizzy_Essentials_Model</class>
+			</clearandfizzy_essentials>
+		</models>
+	
+  
+	</global>
+
+    <adminhtml>
+        <events>
+            <adminhtml_catalog_category_tabs>
+                <observers>
+                    <clearandfizzy_essentials_producttabs>
+                        <class>clearandfizzy_essentials/observers_adminhtml_catalog_category_tabs</class>
+                        <method>actionProductTab</method>
+                    </clearandfizzy_essentials_producttabs>
+                </observers>
+            </adminhtml_catalog_category_tabs>   
+		</events>
+    
+        <layout>
+            <updates>
+                <clearandfizzy_essentials module="Clearandfizzy_Essentials">
+                    <file>clearandfizzy/essentials/essentials.xml</file>
+                </clearandfizzy_essentials>
+            </updates>
+        </layout>
+    </adminhtml>
+
+
+    <frontend>
+        <layout>
+            <updates>
+    
+                <clearandfizzy_essentials module="Clearandfizzy_Essentials">
+                    <file>clearandfizzy/essentials/essentials.xml</file>
+                </clearandfizzy_essentials>
+                
+                <clearandfizzy_essentials_newsletter module="Clearandfizzy_Essentials">
+                    <file>clearandfizzy/essentials/newsletter.xml</file>
+                </clearandfizzy_essentials_newsletter>
+                
+               	<clearandfizzy_essentials_quicksearch module="Clearandfizzy_Essentials">
+					<file>clearandfizzy/essentials/quicksearch.xml</file>	
+				</clearandfizzy_essentials_quicksearch>
+				
+				<clearandfizzy_essentials_toplinks module="Clearandfizzy_Essentials">
+					<file>clearandfizzy/essentials/toplinks.xml</file>	
+				</clearandfizzy_essentials_toplinks>
+
+				<clearandfizzy_essentials_poll module="Clearandfizzy_Essentials">
+					<file>clearandfizzy/essentials/poll.xml</file>	
+				</clearandfizzy_essentials_poll>      
+
+				<clearandfizzy_essentials_callouts module="Clearandfizzy_Essentials">
+					<file>clearandfizzy/essentials/callouts.xml</file>	
+				</clearandfizzy_essentials_callouts>      
+
+				<clearandfizzy_essentials_layoutstack module="Clearandfizzy_Essentials">
+					<file>clearandfizzy/essentials/stacklayout.xml</file>	
+				</clearandfizzy_essentials_layoutstack>  
+				                          
+            </updates>
+        </layout>
+    </frontend>
+    
+</config>
+ 

@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Clearandfizzy_Essentials>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Clearandfizzy_Essentials>
+    </modules>
+</config>

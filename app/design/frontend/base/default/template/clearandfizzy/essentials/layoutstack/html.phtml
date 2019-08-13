@@ -1,0 +1,23 @@
+<?php 
+	$_handles = Mage::app()->getLayout()->getUpdate()->getHandles();
+?>	
+	
+	
+<table>
+	<thead>
+	<tr>
+		<td>Position</td>
+		<td>Handle</td>
+	</tr>
+	</thead>
+	<tbody>
+<?php foreach ($_handles as $key => $value) { ?>
+		<tr>
+			<td><?php echo $key; ?></td>
+			<td><?php echo $value; ?></td>
+		</tr>
+<?php } // end foreach ?>		
+		
+	</tbody>
+</table>	
+	

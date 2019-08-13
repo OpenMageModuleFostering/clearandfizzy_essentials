@@ -1,0 +1,47 @@
+<layout version="0.1.0">
+
+<!--
+Layout for customer login page
+-->
+
+    <default>
+
+		<reference name="header">	
+					
+			<action method="unsetChild" module="customer" ifconfig="clearandfizzy_essentials/toplinks/toplinks_ishidden">
+				<name>topLinks</name>
+			</action>
+		
+		</reference>
+
+        <!-- Remove a whole bunch of default mangento links -->
+        <reference name="top.links">
+        
+        	<action method="removeLinkByUrl" module="customer" ifconfig="clearandfizzy_essentials/toplinks/myaccount_ishidden">
+        		<url helper="customer/getAccountUrl" />
+        	</action>
+        	
+        	<action method="removeLinkBlock" module="wishlist" ifconfig="clearandfizzy_essentials/toplinks/wishlists_ishidden">
+        		<blockName>wishlist_link</blockName>
+        	</action>
+        	
+        </reference>
+        
+        <reference name="footer_links2">
+        	<action method="removeLinkByUrl"><url><url helper="customer/getAccountUrl"/></url></action>
+        </reference>
+    
+    </default>
+   
+   <customer_logged_out>
+		<reference name="top.links">
+            <action method="removeLinkByUrl" module="customer" ifconfig="clearandfizzy_essentials/toplinks/login_ishidden">
+            	<url helper="customer/getLoginUrl" />
+            </action>
+        	<action method="removeLinkByUrl" module="customer" ifconfig="clearandfizzy_essentials/toplinks/register_ishidden">
+        		<url helper="customer/getRegisterUrl" />
+        	</action>
+   		</reference>
+   </customer_logged_out>
+
+</layout>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+
+-->
+<layout version="0.1.0">
+
+    <default>
+        <reference name="header">
+        
+        	<action method="unsetChild" ifconfig="clearandfizzy_essentials/quicksearch/ishidden">
+        		<name>top.search</name>
+        	</action>
+        	
+        	<action method="unsetChild" ifconfig="clearandfizzy_essentials/quicksearch/ishidden">
+        		<name>topSearch</name>
+        	</action>
+        	
+        </reference>
+        	
+	</default>
+	
+</layout>

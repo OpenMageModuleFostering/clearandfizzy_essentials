@@ -1,0 +1,17 @@
+<div><a id="layoutstack" href="" >[+]</a></div>
+<div id="layoutstack_output" class="">
+<?php echo $this->getChildHtml('layoutstack.html'); ?>
+</div>
+
+<?php // Prototype as we know Magento will have this installed already; ?>
+<script type="text/javascript">
+
+<?php // hide the block onload?>
+Element.toggle('layoutstack_output');
+
+Event.observe('layoutstack', 'click', function(event) {
+	event.stop();
+	Element.toggle('layoutstack_output');
+	Element.scrollTo('layoutstack_output');
+});
+</script>
