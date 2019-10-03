@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Clearandfizzy_Essentials",
+    "name": "OpenMageModuleFostering\/Clearandfizzy_Essentials",
     "type": "magento-module",
     "license": "Clearandfizzy-Licence",
     "homepage": "",
     "description": "Time saving collection of small extensions, features and developer tools for your Magento stack.",
     "authors": [
-    {
-        "name": "Gareth Price",
-        "email": "support@clearandfizzy.com"
-    }
-],
+        {
+            "name": "Gareth Price",
+            "email": "support@clearandfizzy.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
